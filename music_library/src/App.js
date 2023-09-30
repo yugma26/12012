@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { createResource as fetchData } from './helper'
 
 function App() {
   return (
@@ -21,5 +22,11 @@ function App() {
     </div>
   );
 }
+
+useEffect(() => {
+  if (searchTerm) {
+      setData(fetchData(searchTerm))
+  }
+}, [searchTerm])
 
 export default App;
