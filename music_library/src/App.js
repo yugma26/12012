@@ -1,10 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 import { createResource as fetchData } from './helper'
+import { useEffect, useState, Suspense } from 'react'
 
 function App() {
+  
   return (
     <div className="App">
+      return (
+    <div className="App">
+        <SearchBar handleSearch={handleSearch} />
+        {message}
+        <Suspense fallback={<h1>Loading...</h1>}>
+            // <Gallery data={data} />
+        </Suspense>
+    </div>
+)
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -21,6 +33,7 @@ function App() {
       </header>
     </div>
   );
+  
 }
 
 useEffect(() => {
